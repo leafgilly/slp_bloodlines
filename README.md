@@ -1,1 +1,2 @@
-# slp_bloodlines
+# Streetlight Pursuit: Bloodlines
+Visual novel prequel for Streetlight Pursuit
