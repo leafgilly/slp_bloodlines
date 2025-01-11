@@ -7,3 +7,5 @@ label multi_choice:
     call screen multi_choice(["Bread", "Meat", "Soup"], 2)
     $ inventory += _return
     a "You got [inventory]"
+    if "Meat" in inventory:
+        a "So you eat meat?"
