@@ -2,4 +2,4 @@
 
 label start:
 
-    jump multi_choice
+    jump scene1_hotel
