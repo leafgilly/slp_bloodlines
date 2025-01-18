@@ -31,7 +31,8 @@ screen multi_choice(options, num_choices, choice_text=DEFAULT_CHOICE_TEXT, incor
                     else:
                         idle "gui/button/checkmark_checked.png"
                     action ToggleDict(selected_options, option)
-                text option
+                textbutton option:
+                    action ToggleDict(selected_options, option)
         textbutton "Done":
             if len([option for option, selected in selected_options.items() if selected]) == num_choices:
                 action Return([val for val in selected_options if selected_options[val]])
