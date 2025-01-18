@@ -1,5 +1,8 @@
 define DEFAULT_CHOICE_TEXT = "Choices"
 
+#options is a dict
+#key: the value you want to be returned
+#value: the value displayed to the user
 screen multi_choice(options, num_choices, choice_text=DEFAULT_CHOICE_TEXT):
     default selected_options = {option: False for option in options}
     default hovered_option = None
@@ -8,7 +11,7 @@ screen multi_choice(options, num_choices, choice_text=DEFAULT_CHOICE_TEXT):
         yalign 0.5
         has vbox spacing 10
         text choice_text
-        for option in options:
+        for option, display_option in options.items():
             hbox:
                 imagebutton:
                     xsize 50
@@ -28,7 +31,7 @@ screen multi_choice(options, num_choices, choice_text=DEFAULT_CHOICE_TEXT):
                     action ToggleDict(selected_options, option)
                     hovered SetScreenVariable("hovered_option", option)
                     unhovered SetScreenVariable("hovered_option", None)
-                textbutton option:
+                textbutton display_option:
                     action ToggleDict(selected_options, option)
                     selected hovered_option == option
                     hovered SetScreenVariable("hovered_option", option)

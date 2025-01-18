@@ -285,7 +285,7 @@ label scene1_hotel:
 
     a "I have enough room for three things. But which ones?"
 
-    call screen multi_choice(ITEM_CHOICES, 3, choice_text="Pick three") #todo MAKE THEM ALL LOWERCASE
+    call screen multi_choice(ITEM_CHOICES, 3, choice_text="Pick three")
     $ inventory += _return
     n "Amanda took the following: [inventory]"
     
