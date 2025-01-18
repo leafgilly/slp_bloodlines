@@ -193,13 +193,49 @@ label scene1_hotel:
     show am_angry at right
     with dissolve
 
-    d "Ah, Amanda! We weren't sure you'd be back."
+    d "Ah, Amanda! It is wonderful to see you."
 
-    a "TODO: We have a conversation."
+    n "The man at the door is a tourist from Italy. The two of them met at a coffee shop on Amanda’s second day in Cairo, and they struck up a friendly conversation. When he learned that Amanda could speak a little Italian, he was instantly smitten. Even if the conversation continued in English after a few broken sentences."
 
-    d "TODO: I invite you out with Gabanna."
+    n "Amanda finds him tedious, but he is a man, and a trusted man at your side is never a bad thing when traveling alone."
 
-    a "TODO: I agree, but I ask for some time to get ready."
+    n "In fact, their acquaintanceship worked out quite well—to Dolce’s delight, they were staying in the same hotel. They've been meeting up for tourist excursions almost every day since."
+
+    n "Amanda leans against the door, tilting her head coyly."
+
+    a "Hey, Dolce. How was the Citadel?"
+
+    d "Incredible. You would have loved it, such a shame you were ill. How are you feeling?"
+
+    a "Much better. It was just a nasty hangover."
+
+    n "It wasn’t much of a hangover so much as a break from this man’s earnestness, but Amanda isn’t in the business of breaking hearts so quickly."
+
+    d "Poor dear. Gabanna was not feeling very well himself. He is resting his eyes back in the room right now."
+
+    n "Gabanna being his travelling companion. Dolce says they’ve been friends since they were little."
+
+    d "But I wanted to ask, if you are up for it…"
+
+    a "Oh?"
+
+    d "Would you accompany us for a night on the town tonight?"
+
+    n "It sounds like the perfect distraction after a shitty day."
+
+    a "I’d love to. When are you leaving?"
+
+    d "Would a half hour be enough time for you to prepare?"
+
+    n "It seems that Amanda has spent enough time on this trip with Dolce and Gabanna that he’s actually starting to know her."
+
+    a "Only if you don’t mind me being fashionably late. Can’t go out looking like this."
+
+    d "Oh, {i}Ciccina{/i}, you are perfect as you are, but I understand. Just knock on our door when you are ready."
+
+    a "I will."
+
+    d "See you soon."
 
     #todo: Dolce sprite
     hide am_angry
@@ -226,7 +262,8 @@ label scene1_hotel:
 
     n "She reaches for the shoe rack and removes a pair of red stilettos with a two inch heel."
 
-    #changing clothes sound
+    play sound "zipper.mp3"
+    pause 0.5
 
     n "Amanda slipped on the outfit and then checked over herself in the mirror."
 
@@ -244,51 +281,46 @@ label scene1_hotel:
 
     a_think "I’m not gonna be able to take everything with me."
 
-    n "She places both purses down on the table near the kitchen and unzips them both."
+    n "She places both purses down on the table near the kitchen and unzips them both. After she puts her wallet inside, there’s a limited amount of space remaining."
 
-    #todo: BEN CREATE A SCREEN TO SELECT 3 ITEMS AT ONCE
+    a "I have enough room for three things. But which ones?"
 
-    menu:
-        a "I have enough space for three things. But which ones? **BEN PUT THE MULTI SELECT SCREEN HERE**"
+    call screen multi_choice(ITEM_CHOICES, 3, choice_text="Pick three", incorrect_text="I need to pick three of these...") #todo MAKE THEM ALL LOWERCASE
+    $ inventory += _return
+    n "Amanda took the following: [inventory]"
+    
+    if "Passport" in inventory:
+        a "Passport chosen."
 
-        "Comb":
-            jump example_choice
+    a "I’ve got my wallet, my [inventory[0]], my [inventory[1]], and my [inventory[2]]." #todo CHANGE THIS SO IT ITERATES THROUGH A LIST
 
-        "Pepper Spray":
-            jump example_choice
+    #[optional dialogue for any interesting combinations goes here]
 
-        "Pack of Cigarettes":
-            jump example_choice
+    n "Amanda hangs her purse on the doorknob so she won’t forget it and then makes her way to the bathroom. Her makeup sits on the countertop, organized with an almost obsessive meticulousness."
 
-        "Passport":
-            jump example_choice
-        
-        "Whistle":
-            jump example_choice
+    a_think "I might as well put on a new face."
 
-        "Makeup Compact":
-            jump example_choice
+    n "She spends the next half hour reapplying her makeup and touching up her hair, moving through it with an efficiency born from a decade of daily practice."
 
-        "Perfume":
-            jump example_choice
+    n "All the while she scrutinizes herself in the mirror, ensuring that every blemish and unruly strand of hair is smoothed over. Not a single imperfection escapes her notice, blotted over and stamped out."
 
-        "Umbrella":
-            jump example_choice
+    n "After all, {w}in the matter of putting on appearances, Amanda has always been uniquely skilled."
 
-        "Disposable Camera":
-            jump example_choice
+    scene bg_hotel
+    with dissolve
 
+    n "Amanda places down her brush and snaps the last compact closed. She tousles her hair for a little extra wildness, and then considers herself."
 
-label example_choice:
+    n "The result speaks for itself, staring back at Amanda in the mirror."
 
-    $ choice1 = True
+    a "Oh, hello."
 
-    a "You made a choice."
+    n "Amanda turns her head this way and that, watching the light cut across her carefully sculpted cheekbones, her striking red lips, her luscious hair."
 
-    jump choice1_done
+    n "The woman is beautiful. She looks like the life of a party—gregarious, fun, carefree. She evokes a sense of mystery that pulls the viewer closer. She has a smile that lights up the room."
 
-label example_choice_done:
+    scene bg_nowhere
+    # with dissolve
+    n "And that is who Amanda will be."
 
-    # ... the game continues here.
-
-    a "You are done making your choice."
+    jump scene1_interim
