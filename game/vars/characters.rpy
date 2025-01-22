@@ -7,7 +7,7 @@ init python:
     for name in image_files:
         character, file_name = name.split('/')[2:]
         image_name = character + ' ' + file_name.split('.')[0].split('_', 1)[1]
-        renpy.image(image_name, file_name)
+        renpy.image(image_name, name)
 
 
 # Character declarations
