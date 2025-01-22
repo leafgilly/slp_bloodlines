@@ -1,4 +1,4 @@
-default inventory = Inventory()
+default inventory = []
 define ITEM_CHOICES = {
     "comb": "Comb",
     "pepper_spray": "Pepper Spray",

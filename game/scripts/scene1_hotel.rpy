@@ -8,43 +8,41 @@ label scene1_hotel:
 
     a "{cps=3}. . . . . .{/cps}"
 
-    show am_sulking
+    show amanda sulking
     with dissolve
 
     a "…"
 
-    hide am_sulking
-    show am_disappointed_scream
+    show amanda disappointed_scream
 
     a "I don’t know why I bother."
 
-    hide am_disappointed_scream
-    show am_neutral
+    show amanda neutral
 
     stop sound fadeout 1.0
     play sound "hangup.mp3"
 
     n "Amanda whips the phone back down onto the receiver and stomps away from the payphone."
 
-    hide am_neutral
-    show am_angry
+    
+    show amanda angry
 
     a "No more wasting money on those assholes."
 
-    hide am_angry
-    show am_sulking
+    
+    show amanda sulking
 
     a_think "It’s not like Mom actually cares how I’m doing over here, anyway."
 
-    hide am_sulking
-    show am_thinking
+    
+    show amanda thinking
 
     a_think "But this is Dad’s favorite place on Earth. Doesn’t he care to hear how his little girl is doing?"
 
     a_think "…"
 
-    hide am_thinking
-    show am_sympathetic
+    
+    show amanda sympathetic
 
     a_think "I’m so stupid."
 
@@ -83,23 +81,23 @@ label scene1_hotel:
 
     play sound "sliding_door.mp3"
 
-    show am_angry
+    show amanda angry
     with dissolve
 
     n "It’s small—too small for her to stretch her legs—and that is yet another minor irritation."
 
-    hide am_angry
-    show am_thinking
+    
+    show amanda thinking
 
     n "But the patio chair is comfortable, and the maids put fresh jasmine flowers on the table that morning."
 
-    hide am_thinking
-    show am_mischievous
+    
+    show amanda mischievous
 
     a_think "And they didn’t touch my cigarettes!"
 
-    hide am_mischievous
-    show am_neutral
+    
+    show amanda neutral
 
     n "A small box of cigarettes rests by the flowerpot. Cleopatra-brand. Normally Amanda smokes Marlboros, and she had brought enough to last the trip, but she was enticed by the box’s design a glittering gold foil wrapping with the Pharaoh herself printed in an eye-catching red."
     
@@ -109,20 +107,20 @@ label scene1_hotel:
 
     n "She takes a long breath, nicotine flooding her system."
 
-    hide am_neutral
-    show am_happy
+    
+    show amanda happy
 
     n "Then she blows it out, her body overcome by lassitude as the plush seat and the cigarette seep all tension from her limbs."
 
-    hide am_happy
-    show am_neutral
+    
+    show amanda neutral
 
     a_think "…"
 
     n "And as she stares passively out at the city below, the combination of physical and chemical pleasures mollify her sour mood, letting her to look inward with an almost passive indifference."
 
-    hide am_neutral
-    show am_sympathetic
+    
+    show amanda sympathetic
 
     a_think "…"
 
@@ -137,18 +135,18 @@ label scene1_hotel:
 
     n "Amanda really thought that by coming here, she’d feel that spark of something that her father felt."
 
-    hide am_sympathetic
-    show am_sulking
+    
+    show amanda sulking
 
     a_think "..."
 
-    hide am_sulking
-    show am_angry
+    
+    show amanda angry
     
     a_think "..."
 
-    hide am_angry
-    show am_neutral
+    
+    show amanda neutral
 
     a_think "..."
 
@@ -158,13 +156,13 @@ label scene1_hotel:
 
     n "The worst is that she knows how, in the eyes of her father, compared to a city that evokes no excitement, no passion, no love…"
 
-    hide am_neutral
-    show am_sad
+    
+    show amanda sad
 
     a_think "{cps=25}…I can never compare.{/cps}"
 
-    hide am_sad
-    show am_sympathetic
+    
+    show amanda sympathetic
 
     a_think "…"
 
@@ -172,80 +170,135 @@ label scene1_hotel:
 
     pause 0.5
 
-    hide am_sympathetic
-    show am_alarmed
+    
+    show amanda alarmed
 
     a_think "Hmm?"
 
     n "Unhurriedly, she makes her way over to the door."
 
-    hide am_alarmed
-    show am_excited_talking
+    
+    show amanda excited_talking
 
     a "Who is it?"
 
     play sound "door_opening.mp3"
 
-    show am_excited_talking at left
+    show amanda excited_talking at left
     with move
 
+    show amanda excited
+
     #todo: Dolce sprite
-    show am_angry at right
+    show dolce happy_talking at right
     with dissolve
 
     d "Ah, Amanda! It is wonderful to see you."
 
-    n "The man at the door is a tourist from Italy. The two of them met at a coffee shop on Amanda’s second day in Cairo, and they struck up a friendly conversation. When he learned that Amanda could speak a little Italian, he was instantly smitten. Even if the conversation continued in English after a few broken sentences."
+    #todo: Dolce sprite
+    show dolce happy
+
+    n "The man at the door is a tourist from Italy. The two of them met at a coffee shop on Amanda’s second day in Cairo, and they struck up a friendly conversation."
+
+    n "When he learned that Amanda could speak a little Italian, he was instantly smitten. Even if the conversation continued in English after a few broken sentences."
 
     n "Amanda finds him tedious, but he is a man, and a trusted man at your side is never a bad thing when traveling alone."
 
     n "In fact, their acquaintanceship worked out quite well—to Dolce’s delight, they were staying in the same hotel. They've been meeting up for tourist excursions almost every day since."
 
+    
+    show amanda playful
+
     n "Amanda leans against the door, tilting her head coyly."
 
+    show amanda playful_talking
+    
     a "Hey, Dolce. How was the Citadel?"
+
+    show amanda playful
+
+    #todo: Dolce sprite
+    show dolce happy_talking
 
     d "Incredible. You would have loved it, such a shame you were ill. How are you feeling?"
 
+    #todo: Dolce sprite
+    show dolce happy
+
+    show amanda happy_talking
+
     a "Much better. It was just a nasty hangover."
+
+    show amanda happy
 
     n "It wasn’t much of a hangover so much as a break from this man’s earnestness, but Amanda isn’t in the business of breaking hearts so quickly."
 
+    show dolce sad_talking
+
     d "Poor dear. Gabanna was not feeling very well himself. He is resting his eyes back in the room right now."
+
+    show dolce sad
 
     n "Gabanna being his travelling companion. Dolce says they’ve been friends since they were little."
 
+    show dolce neutral_speaking
+
     d "But I wanted to ask, if you are up for it…"
+
+    show dolce neutral
+    show amanda mischievous_talking
 
     a "Oh?"
 
+    show dolce playful_talking
+    show amanda mischievous
+
     d "Would you accompany us for a night on the town tonight?"
+
+    show dolce playful
 
     n "It sounds like the perfect distraction after a shitty day."
 
+    show amanda mischievous_talking
+
     a "I’d love to. When are you leaving?"
+
+    show amanda happy
+    show dolce happy_talking
 
     d "Would a half hour be enough time for you to prepare?"
 
+    show dolce happy
+
     n "It seems that Amanda has spent enough time on this trip with Dolce and Gabanna that he’s actually starting to know her."
+
+    show amanda happy_talking
 
     a "Only if you don’t mind me being fashionably late. Can’t go out looking like this."
 
+    show amanda happy
+    show dolce playful_talking
+
     d "Oh, {i}Ciccina{/i}, you are perfect as you are, but I understand. Just knock on our door when you are ready."
+
+    show dolce happy
+    show amanda happy_talking
 
     a "I will."
 
+    show amanda happy
+    show dolce happy_talking
+
     d "See you soon."
 
-    #todo: Dolce sprite
-    hide am_angry
-    with dissolve
-
     play sound "door_closing.mp3"
+    
+    hide dolce
+    with dissolve
 
     pause 0.5
 
-    show am_excited_talking at center
+    show amanda happy at center
     with move
 
     n "Amanda heads over to her closet with a newfound lightness in her steps and peruses her wardrobe."
@@ -258,7 +311,11 @@ label scene1_hotel:
 
     n "It is also one of the more salacious dresses in her collection."
 
+    show amanda happy_very_talking
+
     a "And these go perfect with my dancing shoes."
+
+    show amanda happy
 
     n "She reaches for the shoe rack and removes a pair of red stilettos with a two inch heel."
 
@@ -267,11 +324,17 @@ label scene1_hotel:
 
     n "Amanda slipped on the outfit and then checked over herself in the mirror."
 
+    show amanda mischievous_talking
+
     a "Perfect."
+
+    show amanda mischievous
 
     a_think "Poor Dolce. He doesn’t stand a chance."
 
     n "Amanda snatches up her purse from where she left it on the couch."
+
+    show amanda neutral
 
     a_think "Hmm… Too big to take to nightclubs."
 
@@ -279,9 +342,13 @@ label scene1_hotel:
 
     n "Finally she selects a simple, black cross-body bag. It’s much smaller than her original purse."
 
+    show amanda sulking
+
     a_think "I’m not gonna be able to take everything with me."
 
     n "She places both purses down on the table near the kitchen and unzips them both. After she puts her wallet inside, there’s a limited amount of space remaining."
+
+    show amanda thinking
 
     a "I have enough room for three things. But which ones?"
 
@@ -292,9 +359,13 @@ label scene1_hotel:
     if "Passport" in inventory:
         a "Passport chosen."
 
+    show amanda happy_talking
+
     a "I’ve got my wallet, my [inventory[0]], my [inventory[1]], and my [inventory[2]]." #todo CHANGE THIS SO IT ITERATES THROUGH A LIST
 
     #[optional dialogue for any interesting combinations goes here]
+
+    show amanda happy
 
     n "Amanda hangs her purse on the doorknob so she won’t forget it and then makes her way to the bathroom. Her makeup sits on the countertop, organized with an almost obsessive meticulousness."
 
