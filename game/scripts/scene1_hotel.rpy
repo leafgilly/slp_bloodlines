@@ -286,13 +286,13 @@ label scene1_hotel:
     a "I have enough room for three things. But which ones?"
 
     call screen multi_choice(ITEM_CHOICES, 3, choice_text="Pick three")
-    $ inventory += _return
-    n "Amanda took the following: [inventory]"
+    $ inventory.add_items(_return)
+    n "Amanda took the following: [inventory.get_items()]"
     
-    if "Passport" in inventory:
+    if "Passport" in inventory.get_items():
         a "Passport chosen."
 
-    a "I’ve got my wallet, my [inventory[0]], my [inventory[1]], and my [inventory[2]]." #todo CHANGE THIS SO IT ITERATES THROUGH A LIST
+    a "I’ve got my wallet, my [', my '.join(inventory.get_items()[:-1])] and my [inventory.get_items()[-1]]." 
 
     #[optional dialogue for any interesting combinations goes here]
 
