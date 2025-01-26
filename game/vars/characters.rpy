@@ -12,7 +12,7 @@ init python:
 
 # Character declarations
 
-define n = Character(None, who_color="#ffffff")
+define n = Character(None, who_color="#ffffff", window_background=Image("gui/textbox_narrator.png", xalign=0.5, yalign=1.0))
 
 define a = Character("Amanda", who_color="#ffee00")
 define a_think = Character("Amanda", who_color="#ffee00", what_italic=True)
